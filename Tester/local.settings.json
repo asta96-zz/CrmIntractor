@@ -1,0 +1,11 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "secret2": "here is your local secret",
+    "keyvault": "https://d365-config-keys.vault.azure.net/secrets/",
+    "D365ConnectionString": "Url=https://orgdc76b2ea.crm.dynamics.com;AuthType=ClientSecret;ClientId=057fe772-bf0b-48ae-8a0c-fd731ff43e8d;ClientSecret=ct~FMeFwbZ9h_F.yUUjtO1_-5y1120e3~8;RequireNewInstance=true",
+    "AzureSbConnection": "Endpoint=sb://sbd365.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=I8OJDfZ5VQTA73kqVTQCZxvYLuCf/du2knDP+EoCLYQ="
+  }
+}
