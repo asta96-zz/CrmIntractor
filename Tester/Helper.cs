@@ -13,7 +13,7 @@ namespace Tester
         public static ServiceClient Service()
         {
             System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
-            string connectionString = "Url=https://orgdc76b2ea.crm.dynamics.com;AuthType=ClientSecret;ClientId=057fe772-bf0b-48ae-8a0c-fd731ff43e8d;ClientSecret=ct~FMeFwbZ9h_F.yUUjtO1_-5y1120e3~8;RequireNewInstance=true";
+            string connectionString = "Url=https://dev-davinci.crm8.dynamics.com;AuthType=ClientSecret;ClientId=882b4b59-952c-462b-af18-79a33017fa5b;ClientSecret=hkD7Q~UHvbrB712MwF0qglKA.uUXkuWCOI1oB;RequireNewInstance=true";
             return new ServiceClient(connectionString);
         }
         

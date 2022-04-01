@@ -24,19 +24,23 @@ namespace Tester
         private static void DeleteAllRecords(ServiceClient x)
         {
             Console.WriteLine("Deleting all records. Please wait...");
-
+            FilterExpression olderThan6Months = new FilterExpression();
+            olderThan6Months.AddCondition("createdon", ConditionOperator.OlderThanXMonths, 6);
             BulkDeleteRequest request = new BulkDeleteRequest
             {
-                JobName = "Delete All",
+                JobName = "Delete Account SYNC",
                 ToRecipients = new Guid[] { },
                 CCRecipients = new Guid[] { },
-                RecurrencePattern = string.Empty,
+                RecurrencePattern = "FREQ=DAILY;INTERVAL=45",
                 QuerySet = new QueryExpression[]
                 {
-            new QueryExpression { EntityName = "account" },
-            new QueryExpression { EntityName = "contact" }
-            //new QueryExpression { EntityName = "lead" }
-                }
+                    new QueryExpression() { EntityName = "account", Criteria = olderThan6Months },
+                    new QueryExpression { EntityName = "contact", Criteria = olderThan6Months }
+
+                },
+                StartDateTime = new DateTime(2022, 1, 16, 00, 00, 00),
+                RunNow = false,
+                
             };
 
             BulkDeleteResponse response = (BulkDeleteResponse)x.Execute(request);
